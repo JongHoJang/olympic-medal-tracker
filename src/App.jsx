@@ -6,40 +6,23 @@ import "./App.css";
 function App() {
   const [countries, setCountries] = useState([]);
 
-  const [country, setCountry] = useState("");
-  const [goldMedals, setGoldMedals] = useState("0");
-  const [silverMedals, setSilverMedals] = useState("0");
-  const [bronzeMedals, setBronzeMedals] = useState("0");
+  const [countryInfo, setCountryInfo] = useState({
+    name: "",
+    gold: 0,
+    silver: 0,
+    bronze: 0,
+  });
 
-  const handleAddCountry = (e) => {
+  const AddCountry = (e) => {
     e.preventDefault();
+    setCountries([...countries, countryInfo]);
 
-    const newCountries = [
-      ...countries,
-      {
-        country: country,
-        goldMedals: goldMedals,
-        silverMedals: silverMedals,
-        bronzeMedals: bronzeMedals,
-      },
-    ];
-
-    setCountries(newCountries);
     console.log(countries);
   };
 
-  const countryInputHandler = (e) => {
-    setCountry(e.target.value);
-    // console.log(country);
-  };
-  const goldMedalInputHandler = (e) => {
-    setGoldMedals(e.target.value);
-  };
-  const silverMedalInputHandler = (e) => {
-    setSilverMedals(e.target.value);
-  };
-  const bronzeMedalInputHandler = (e) => {
-    setBronzeMedals(e.target.value);
+  const onInputChange = (e) => {
+    const { name, value } = e.target;
+    setCountryInfo({ ...countryInfo, [name]: value });
   };
 
   return (
@@ -48,38 +31,42 @@ function App() {
         <h1 className="title">2024 파리 올림픽</h1>
 
         <div className="input-container">
-          <form onSubmit={handleAddCountry}>
+          <form onSubmit={AddCountry}>
             <div className="input-item">
               <label>국가명</label>
               <input
                 type="text"
                 placeholder="국가 입력"
-                // value={}
-                onChange={countryInputHandler}
+                value={countryInfo.name}
+                name="name"
+                onChange={onInputChange}
               />
             </div>
             <div className="input-item">
               <label>금메달</label>
               <input
                 type="text"
-                // value={}
-                onChange={goldMedalInputHandler}
+                value={countryInfo.gold}
+                name="gold"
+                onChange={onInputChange}
               />
             </div>
             <div className="input-item">
               <label>은메달</label>
               <input
                 type="text"
-                // value={}
-                onChange={silverMedalInputHandler}
+                value={countryInfo.silver}
+                name="silver"
+                onChange={onInputChange}
               />
             </div>
             <div className="input-item">
               <label>동메달</label>
               <input
                 type="text"
-                // value={}
-                onChange={bronzeMedalInputHandler}
+                value={countryInfo.bronze}
+                name="bronze"
+                onChange={onInputChange}
               />
             </div>
 
@@ -103,11 +90,11 @@ function App() {
           </thead>
           <tbody>
             {countries.map((country) => (
-              <tr key={country.country}>
-                <td>{country.country}</td>
-                <td>{country.goldMedals}</td>
-                <td>{country.silverMedals}</td>
-                <td>{country.bronzeMedals}</td>
+              <tr key={country.name}>
+                <td>{country.name}</td>
+                <td>{country.gold}</td>
+                <td>{country.silver}</td>
+                <td>{country.bronze}</td>
                 <td>
                   <button>삭제</button>
                 </td>
