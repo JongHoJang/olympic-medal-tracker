@@ -22,7 +22,9 @@ const InputForm = ({ countries, setCountries }) => {
   const AddCountry = (e) => {
     e.preventDefault();
 
-    if (!searchCountry) {
+    if (countryInfo.name === "") {
+      alert("국가명을 적어주세요.");
+    } else if (!searchCountry) {
       setCountries([...countries, countryInfo]);
     } else {
       alert("이미 추가된 나라입니다.");
