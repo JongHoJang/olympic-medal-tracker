@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  color: #333;
+}
+
+#root {
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container {
+  margin: 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+}
+
+.input-container {
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #003580;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+input {
+  background-color: #fff;
+  border: solid 1px #888;
+  width: 180px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+.button-container {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+}
+
+.button-container button {
+  background-color: #fc0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  width: 180px;
+  height: 40px;
+}
+
+/*  */
+/*  */
+/* 메달 통계 부분 */
+.medal-table {
+  width: 80%;
+  border-collapse: collapse; /* 경계선이 겹치지 않게 */
+  margin: 30px auto;
+}
+
+.medal-table th,
+.medal-table td {
+  border: none;
+  padding: 16px;
+  text-align: center;
+}
+
+.medal-table th {
+  background-color: #003580; /* 헤더 배경색 */
+  color: white;
+  font-weight: bold;
+}
+
+/* 짝수 행 배경색 */
+.medal-table tr:nth-child(even) {
+  background-color: #d9d9d9;
+}
+
+/* .medal-table td {
+  background-color:;
+} */
+
+.medal-table button {
+  background-color: red;
+  color: white;
+}
