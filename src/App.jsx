@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./App.css";
-import InputForm from "./InputForm";
-import Table from "./Table";
+import "./styles/App.css";
+import InputForm from "./components/InputForm";
+import Table from "./components/Table";
 
 function App() {
   // 국가와 메달 수를 담고 있는 객체 배열

@@ -5,6 +5,7 @@ const Table = ({ countries, setCountries }) => {
   // 금메달 수에 따라 오름차순 정렬
   const sortedCountries = [...countries].sort((a, b) => b.gold - a.gold);
 
+  //삭제
   const handleDeleteCountry = (id) => {
     console.log(id);
     const filteredCountry = countries.filter((selected) => {
@@ -36,9 +37,7 @@ const Table = ({ countries, setCountries }) => {
             <td>{country.silver}</td>
             <td>{country.bronze}</td>
             <td>
-              <button onClick={() => handleDeleteCountry(country.id)}>
-                삭제
-              </button>
+              <button onClick={() => handleDeleteCountry(country.id)}>삭제</button>
             </td>
           </tr>
         ))}

@@ -6,7 +6,7 @@ const InputForm = ({ countries, setCountries }) => {
     name: "",
     gold: 0,
     silver: 0,
-    bronze: 0,
+    bronze: 0
   });
 
   // 국가이름 찾기
@@ -19,7 +19,7 @@ const InputForm = ({ countries, setCountries }) => {
   };
 
   // 추가
-  const AddCountry = (e) => {
+  const addCountry = (e) => {
     e.preventDefault();
 
     if (countryInfo.name === "") {
@@ -36,7 +36,7 @@ const InputForm = ({ countries, setCountries }) => {
       name: "",
       gold: 0,
       silver: 0,
-      bronze: 0,
+      bronze: 0
     });
   };
 
@@ -56,43 +56,22 @@ const InputForm = ({ countries, setCountries }) => {
   return (
     <>
       <div className="input-container">
-        <form onSubmit={AddCountry}>
+        <form onSubmit={addCountry}>
           <div className="input-item">
             <label>국가명</label>
-            <input
-              type="text"
-              placeholder="국가 입력"
-              value={countryInfo.name}
-              name="name"
-              onChange={onInputChange}
-            />
+            <input type="text" placeholder="국가 입력" value={countryInfo.name} name="name" onChange={onInputChange} />
           </div>
           <div className="input-item">
             <label>금메달</label>
-            <input
-              type="number"
-              value={countryInfo.gold}
-              name="gold"
-              onChange={onInputChange}
-            />
+            <input type="number" value={countryInfo.gold} name="gold" onChange={onInputChange} />
           </div>
           <div className="input-item">
             <label>은메달</label>
-            <input
-              type="number"
-              value={countryInfo.silver}
-              name="silver"
-              onChange={onInputChange}
-            />
+            <input type="number" value={countryInfo.silver} name="silver" onChange={onInputChange} />
           </div>
           <div className="input-item">
             <label>동메달</label>
-            <input
-              type="number"
-              value={countryInfo.bronze}
-              name="bronze"
-              onChange={onInputChange}
-            />
+            <input type="number" value={countryInfo.bronze} name="bronze" onChange={onInputChange} />
           </div>
 
           <div className="button-container">
